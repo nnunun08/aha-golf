@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.js" type="text/javascript" defer></script>
+</head>
+<body class="">
+    <div class="main">
+        <button class="menu"></button>
+        <div class="sectionItem sectionItem01">
+
+            <div class="main-text">
+                <img src="./img/main_text.png" alt="main-text">
+            </div>
+
+            <div class="main-subtext">
+                <p>
+                    AHA 골프의 다양한<br>
+                    프로그램을 통해 당신의 새로운<br>
+                    골프 Life에 도전하세요.
+                </p>
+                <button class="mainBtn" onclick="openOffcanvas()">예약</button>
+            </div>
+            <div class="textWrap">
+                <span class="num fh">01</span>
+                <div class="line"></div>
+                <h2 class="fh">
+                    Professional<br>
+                    Golfers
+                </h2>
+                <p>
+                    프로 골퍼 소개
+                </p>
+                <button onclick="openGolfer()">
+                    <img src="./img/btn-arr.svg" alt="btn-arr">
+                </button>
+            </div>
+
+            <div class="golferVisual"></div>
+        </div>
+        <div class="sectionItem sectionItem03">
+            <div class="textWrap">
+                <span class="num fh">02</span>
+                <div class="line"></div>
+                <h2 class="fh">
+                    Studio<br>
+                    Introduction
+                </h2>
+                <p>
+                    골프 스튜디오
+                </p>
+                <a href="#">
+                    <img src="./img/btn-arr.svg" alt="btn-arr">
+                </a>
+            </div>
+        </div>
+        <div class="sectionItem sectionItem04">
+            <div class="textWrap">
+                <span class="num fh">03</span>
+                <div class="line"></div>
+                <h2 class="fh">
+                    AHA<br>
+                    Spirit
+                </h2>
+                <p>
+                    정령
+                </p>
+                <a href="#">
+                    <img src="./img/btn-arr.svg" alt="btn-arr">
+                </a>
+            </div>
+
+            <div class="bgItemWrap">
+                <div class="bgItem ch ch01"></div>
+                <div class="bgItem"></div>
+                <div class="bgItem ch ch02"></div>
+                <div class="bgItem"></div>
+                <div class="bgItem ch ch03"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dim" onclick="closeOffcanvas()"></div>
+    <div class="ev-Offcanvas">
+        <div class="offcanvasClose" onclick="closeOffcanvas()"></div>
+    </div>
+
+    <a href="#">
+        <div class="logo">
+            <img src="./img/logo.svg" alt="logo">
+        </div>
+    </a>
+
+    <ul class="golferList">
+        <li class="ac"><a href="#">김민재 프로</a></li>
+        <li><a href="#">박재환 프로</a></li>
+        <li><a href="#">정다해 프로</a></li>
+        <li><a href="#">김민재 프로</a></li>
+    </ul>
+
+    <div class="golfer-control fh">
+        <span class="arrow-l"></span>
+        <span class="text">Professional Golfers</span>
+        <span class="arrow-r"></span>
+    </div>
+    
+    <div class="golferLayer">
+        <div class="golferProfile">
+            <img src="./img/dummy.png" alt="dummy">
+        </div>
+    </div>
+</body>
+</html>
