@@ -7,18 +7,81 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./css/slick.css"/>
     <link rel="stylesheet" type="text/css" href="./css/slick-theme.css"/>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/m_style.css">
 </head>
 <body>
     <div class="main">
-        <div class="section-item"></div>
+
+        <!-- 로고 -->
+        <a href="#">
+            <div class="logo">
+                <img src="./img/logo.svg" alt="logo">
+            </div>
+        </a>
+
+        <!-- 햄버거 -->
+        <button class="menu"></button>
+
+        <!-- 슬라이드 컨텐츠 -->
+        <div class="slideWrap">
+            <div class="sectionItem sectionItem01">
+                <div class="textWrap">
+                    <span class="num fh">01</span>
+                    <div class="line"></div>
+                    <h2 class="fh">
+                        Professional<br>
+                        Golfers
+                    </h2>
+                    <p>
+                        프로 골퍼 소개
+                    </p>
+                    <button onclick="openGolfer()">
+                        <img src="./img/btn-arr.svg" alt="btn-arr">
+                    </button>
+                </div>
+            </div>
+            <div class="sectionItem sectionItem02">
+                <div class="textWrap">
+                    <span class="num fh">01</span>
+                    <div class="line"></div>
+                    <h2 class="fh">
+                        Professional<br>
+                        Golfers
+                    </h2>
+                    <p>
+                        프로 골퍼 소개
+                    </p>
+                    <button onclick="openGolfer()">
+                        <img src="./img/btn-arr.svg" alt="btn-arr">
+                    </button>
+                </div>
+            </div>
+            <div class="sectionItem sectionItem03" style="background-color: red;">
+                <div class="textWrap">
+                    <span class="num fh">01</span>
+                    <div class="line"></div>
+                    <h2 class="fh">
+                        Professional<br>
+                        Golfers
+                    </h2>
+                    <p>
+                        프로 골퍼 소개
+                    </p>
+                    <button onclick="openGolfer()">
+                        <img src="./img/btn-arr.svg" alt="btn-arr">
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 내 예약 정보 -->
+        <div>
+
+        </div>
     </div>
 
-    <div class="single-item">
-        <div>your content1</div>
-        <div>your content2</div>
-        <div>your content3</div>
-      </div>
+    
 
       <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
       <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -26,8 +89,14 @@
     
       <script type="text/javascript">
         $(document).ready(function(){
-          $('.single-item').slick({
-
+          $('.slideWrap').slick({
+            //   dots: true,
+            //   infinite: true,
+            //   speed: 180,
+            //   fade: true,
+            //   cssEase: 'ease-in-out',
+            //   slidesToScroll: 1,
+            //   slidesToShow: 1,
           });
         });
       </script>
