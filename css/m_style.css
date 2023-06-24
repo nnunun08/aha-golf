@@ -227,22 +227,29 @@ Select::-ms-expand {
   margin-bottom: 0;
   transform: translate(0, 0);
 }
-.main .scheduleWrap {
+
+.scheduleWrap {
   position: fixed;
   left: 0;
   right: 0;
-  top: 100vh;
+  bottom: 0;
   margin: 0 25px;
+}
+.scheduleWrap .scheduleCard {
+  position: absolute;
+  top: 0;
+  width: 100%;
   transform: translateY(-74px);
   transition: 0.6s 0.1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  padding-bottom: 34px;
 }
-.main .scheduleWrap h3 {
+.scheduleWrap h3 {
   font-size: 16px;
   line-height: 24px;
   color: #fff;
   margin-bottom: 32px;
 }
-.main .scheduleWrap .scheduleTrigger {
+.scheduleWrap .scheduleTrigger {
   width: 28px;
   height: 28px;
   background: url(../img/mobile/schedule-arr.svg);
@@ -252,64 +259,64 @@ Select::-ms-expand {
   right: 38px;
   transition: 0s 0.6s;
 }
-.main .scheduleWrap .schedule-top {
+.scheduleWrap .schedule-top {
   border-radius: 1.8vw 1.8vw 0 0;
   padding: 24px 44px 12px;
 }
-.main .scheduleWrap .schedule-top,
-.main .scheduleWrap .schedule-bottom {
+.scheduleWrap .schedule-top,
+.scheduleWrap .schedule-bottom {
   background-color: rgba(0, 0, 0, 0.88);
 }
-.main .scheduleWrap .schedule-bottom {
+.scheduleWrap .schedule-bottom {
   border-radius: 0 0 1.8vw 1.8vw;
   padding: 10px 44px 30px;
 }
-.main .scheduleWrap .schedule-tray img {
+.scheduleWrap .schedule-tray img {
   width: 100%;
   margin: 0;
   border: 0;
   display: block;
 }
-.main .scheduleWrap .info-top {
+.scheduleWrap .info-top {
   font-size: 28px;
   color: #fff;
   text-transform: uppercase;
 }
-.main .scheduleWrap .info-top > div + div {
+.scheduleWrap .info-top > div + div {
   margin-top: 13px;
 }
-.main .scheduleWrap .info-top .name {
+.scheduleWrap .info-top .name {
   color: #ECF2CB;
 }
-.main .scheduleWrap .info-top .room {
+.scheduleWrap .info-top .room {
   color: #ECF2CB;
 }
-.main .scheduleWrap .info-bottom {
+.scheduleWrap .info-bottom {
   font-size: 13px;
   margin-top: 31px;
   display: flex;
   justify-content: space-between;
   color: #fff;
 }
-.main .scheduleWrap .info-bottom .start,
-.main .scheduleWrap .info-bottom .end {
+.scheduleWrap .info-bottom .start,
+.scheduleWrap .info-bottom .end {
   width: 50%;
 }
-.main .scheduleWrap .info-bottom .date {
+.scheduleWrap .info-bottom .date {
   font-size: 15px;
   color: #ECF2CB;
   margin-bottom: 6px;
 }
-.main .scheduleWrap .info-bottom .time {
+.scheduleWrap .info-bottom .time {
   font-size: 15px;
   color: #ECF2CB;
   margin-bottom: 6px;
 }
-.main .scheduleWrap .schedule-bottom {
+.scheduleWrap .schedule-bottom {
   display: flex;
   gap: 10px;
 }
-.main .scheduleWrap .schedule-bottom .ev-btn {
+.scheduleWrap .schedule-bottom .ev-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -321,14 +328,14 @@ Select::-ms-expand {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 5px;
 }
-.main .scheduleWrap .schedule-bottom .ev-btn.colorBtn {
+.scheduleWrap .schedule-bottom .ev-btn.colorBtn {
   background-color: #A0E644;
   color: #000;
   border: 0;
 }
 
-.scheduleOn .scheduleWrap {
-  transform: translateY(-390px);
+.scheduleOn .scheduleWrap .scheduleCard {
+  transform: translateY(-100%);
 }
 .scheduleOn .scheduleTrigger {
   transform: rotate(180deg);

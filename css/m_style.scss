@@ -223,109 +223,116 @@ Select::-ms-expand {
         }
     }
 
-    .scheduleWrap {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 100vh;
-        margin: 0 25px;
+}
+
+.scheduleWrap {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 25px;
+    .scheduleCard {
+        position: absolute;
+        top: 0;
+        width: 100%;
         transform: translateY(-74px);
         transition: 0.6s 0.1s cubic-bezier(0.65, 0.05, 0.36, 1);
-        h3 {
-            font-size: 16px;
-            line-height: 24px;
-            color: #fff;
-            margin-bottom: 32px;
-        }
+        padding-bottom: 34px;
+    }
+    h3 {
+        font-size: 16px;
+        line-height: 24px;
+        color: #fff;
+        margin-bottom: 32px;
+    }
 
-        .scheduleTrigger {
-            width: 28px;
-            height: 28px;
-            background: url(../img/mobile/schedule-arr.svg);
+    .scheduleTrigger {
+        width: 28px;
+        height: 28px;
+        background: url(../img/mobile/schedule-arr.svg);
+        border: 0;
+        position: absolute;
+        top: 24px;
+        right: 38px;
+        transition: 0s 0.6s;
+    }
+    
+    .schedule-top {
+        border-radius: 1.8vw 1.8vw 0 0;
+        padding: 24px 44px 12px;
+    }
+    .schedule-top,
+    .schedule-bottom {
+        background-color: rgba(0,0,0,0.88);
+    }
+    .schedule-bottom {
+        border-radius: 0 0 1.8vw 1.8vw;
+        padding: 10px 44px 30px;
+    }
+    .schedule-tray {
+        img {
+            width: 100%;
+            margin: 0;
             border: 0;
-            position: absolute;
-            top: 24px;
-            right: 38px;
-            transition: 0s 0.6s;
+            display: block;
         }
-        
-        .schedule-top {
-            border-radius: 1.8vw 1.8vw 0 0;
-            padding: 24px 44px 12px;
+    }
+    
+    .info-top {
+        font-size: 28px;
+        color: #fff;
+        text-transform: uppercase;
+        > div + div {
+            margin-top: 13px;
         }
-        .schedule-top,
-        .schedule-bottom {
-            background-color: rgba(0,0,0,0.88);
+        .name {
+            color:#ECF2CB;
         }
-        .schedule-bottom {
-            border-radius: 0 0 1.8vw 1.8vw;
-            padding: 10px 44px 30px;
+        .room {
+            color:#ECF2CB;
         }
-        .schedule-tray {
-            img {
-                width: 100%;
-                margin: 0;
-                border: 0;
-                display: block;
-            }
+    }
+    .info-bottom {
+        font-size: 13px;
+        margin-top: 31px;
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        .start,
+        .end {
+            // flex: 1 0 0;
+            width: 50%;
         }
-        
-        .info-top {
-            font-size: 28px;
-            color: #fff;
-            text-transform: uppercase;
-            > div + div {
-                margin-top: 13px;
-            }
-            .name {
-                color:#ECF2CB;
-            }
-            .room {
-                color:#ECF2CB;
-            }
+        .date {
+            font-size: 15px;
+            color: #ECF2CB;
+            margin-bottom: 6px;
         }
-        .info-bottom {
-            font-size: 13px;
-            margin-top: 31px;
-            display: flex;
-            justify-content: space-between;
-            color: #fff;
-            .start,
-            .end {
-                // flex: 1 0 0;
-                width: 50%;
-            }
-            .date {
-                font-size: 15px;
-                color: #ECF2CB;
-                margin-bottom: 6px;
-            }
-            .time {
-                font-size: 15px;
-                color: #ECF2CB;
-                margin-bottom: 6px;
-            }
+        .time {
+            font-size: 15px;
+            color: #ECF2CB;
+            margin-bottom: 6px;
         }
+    }
 
-        .schedule-bottom {
+    .schedule-bottom {
+        display: flex;
+        gap: 10px;
+        .ev-btn {
             display: flex;
-            gap: 10px;
-            .ev-btn {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex: 1 0 0;
-                height: 52px;
-                font-size: 16px;
-                font-weight: bold;
-                color: #fff;
-                border: 1px solid rgba(255,255,255,0.5);
-                border-radius: 5px;
-                &.colorBtn {
-                    background-color: #A0E644;
-                    color: #000;
-                    border: 0;
-                }
+            justify-content: center;
+            align-items: center;
+            flex: 1 0 0;
+            height: 52px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 5px;
+            &.colorBtn {
+                background-color: #A0E644;
+                color: #000;
+                border: 0;
             }
         }
     }
@@ -333,7 +340,10 @@ Select::-ms-expand {
 
 .scheduleOn {
     .scheduleWrap {
-        transform: translateY(-390px);
+        .scheduleCard {
+            transform: translateY(-100%);
+            // top: calc(100% + 34px);
+        }
     }   
     .scheduleTrigger {
         transform: rotate(180deg);
