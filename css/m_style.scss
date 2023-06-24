@@ -110,31 +110,232 @@ Select::-ms-expand {
     .sectionItem {
         height: 100vh;
         position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
         .textWrap {
             position: absolute;
             right: 40px;
             bottom: 174px;
             text-align: right;
             color: #fff;
+            z-index: 2;
+            .num {
+                color: #ECF2CB;
+                font-size: 18px;
+            }
+            .line {
+                width: 1px;
+                height: 100px;
+                background-color: #FFFFFF;
+                margin-left: auto;
+                margin-top: 9px;
+                margin-bottom: 53px;
+            }
+            h2 {
+                color: #ECF2CB;
+                font-size: 40px;
+                margin-bottom: 22px;
+            }
+            p {
+                font-size: 22px;
+                margin-bottom: 32px;
+            }
             button {
                 width: auto;
                 height: auto;
                 background-color: transparent;
                 border: 0;
                 outline: 0;
+                cursor: pointer;
             }
         }
     }
-    .sectionItem01 {background: url(../img/section-01-default.png) center/cover no-repeat;}
-    .sectionItem02 {background: url(../img/section-03.png) center/cover no-repeat;}
-    .sectionItem03 {background: url(../img/section-04-1.png) center/cover no-repeat;}
-
-    .slick-slide {
-        // width: 90vw !important;
-        border: 1px solid #333;
-        // opacity: 1 !important;
+    .sectionItem01 {
+        background: url(../img/section-01-default.png) right 7% center/cover no-repeat;
+        &::before {background-color: rgba(0,0,0,0.2);}
     }
-    // .slick-active {
-    //     padding-right: 30px;
-    // }
+    .sectionItem02 {
+        background: url(../img/section-03.png) center/cover no-repeat;
+        &::before {background-color: rgba(0,0,0,0.3);}
+    }
+    .sectionItem03 {
+        background: url(../img/mobile/section-03-1.png) center/cover no-repeat;
+        &::before {background-color: rgba(0,0,0,0.1);}
+
+        .bgItemWrap {
+            .bgItem {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                &:nth-child(1) {
+                    background: url(../img/mobile/section-03-item-1.png) center/cover no-repeat;
+                }
+                &:nth-child(2) {
+                    background: url(../img/mobile/section-03-2.png) center/cover no-repeat;
+                }
+                &:nth-child(3) {
+                    background: url(../img/mobile/section-03-item-2.png) center/cover no-repeat;
+                }
+                &:nth-child(4) {
+                    background: url(../img/mobile/section-03-3.png) center/cover no-repeat;
+                }
+                &:nth-child(5) {
+                    background: url(../img/mobile/section-03-item-3.png) center/cover no-repeat;
+                }
+            }
+        }
+
+        .ch {
+            opacity: 0;
+            margin-bottom: -100px;
+            transition: 0.8s ease-in-out;
+        }
+        .ch01 {transition-delay: 0.22s;transform: translate(30px, 140px);}
+        .ch02 {transition-delay: 0.1s;transform: translate(-30px, 100px);}
+        .ch03 {transition-delay: 0.2s;transform: translate(30px, 100px);}
+    }
+
+
+    // 슬라이드 인터렉션
+    .slick-current {
+        .sectionItem {
+            transition: 1s 0.4s ease-in-out;
+        }
+        .sectionItem01 {
+            background-position: right 20% center;
+        }
+        .sectionItem02 {
+            background-position: 40% center;
+        }
+        .sectionItem03 {
+            .ch {
+                opacity: 1;
+                margin-bottom: 0;
+                transform: translate(0, 0);
+            }
+        }
+    }
+
+    .scheduleWrap {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 100vh;
+        margin: 0 25px;
+        transform: translateY(-74px);
+        transition: 0.6s 0.1s cubic-bezier(0.65, 0.05, 0.36, 1);
+        h3 {
+            font-size: 16px;
+            line-height: 24px;
+            color: #fff;
+            margin-bottom: 32px;
+        }
+
+        .scheduleTrigger {
+            width: 28px;
+            height: 28px;
+            background: url(../img/mobile/schedule-arr.svg);
+            border: 0;
+            position: absolute;
+            top: 24px;
+            right: 38px;
+            transition: 0s 0.6s;
+        }
+        
+        .schedule-top {
+            border-radius: 1.8vw 1.8vw 0 0;
+            padding: 24px 44px 12px;
+        }
+        .schedule-top,
+        .schedule-bottom {
+            background-color: rgba(0,0,0,0.88);
+        }
+        .schedule-bottom {
+            border-radius: 0 0 1.8vw 1.8vw;
+            padding: 10px 44px 30px;
+        }
+        .schedule-tray {
+            img {
+                width: 100%;
+                margin: 0;
+                border: 0;
+                display: block;
+            }
+        }
+        
+        .info-top {
+            font-size: 28px;
+            color: #fff;
+            text-transform: uppercase;
+            > div + div {
+                margin-top: 13px;
+            }
+            .name {
+                color:#ECF2CB;
+            }
+            .room {
+                color:#ECF2CB;
+            }
+        }
+        .info-bottom {
+            font-size: 13px;
+            margin-top: 31px;
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            .start,
+            .end {
+                // flex: 1 0 0;
+                width: 50%;
+            }
+            .date {
+                font-size: 15px;
+                color: #ECF2CB;
+                margin-bottom: 6px;
+            }
+            .time {
+                font-size: 15px;
+                color: #ECF2CB;
+                margin-bottom: 6px;
+            }
+        }
+
+        .schedule-bottom {
+            display: flex;
+            gap: 10px;
+            .ev-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex: 1 0 0;
+                height: 52px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #fff;
+                border: 1px solid rgba(255,255,255,0.5);
+                border-radius: 5px;
+                &.colorBtn {
+                    background-color: #A0E644;
+                    color: #000;
+                    border: 0;
+                }
+            }
+        }
+    }
+}
+
+.scheduleOn {
+    .scheduleWrap {
+        transform: translateY(-390px);
+    }   
+    .scheduleTrigger {
+        transform: rotate(180deg);
+    }
 }

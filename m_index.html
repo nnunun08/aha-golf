@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="./css/slick.css"/>
     <link rel="stylesheet" type="text/css" href="./css/slick-theme.css"/>
     <link rel="stylesheet" type="text/css" href="./css/m_style.css">
+    <script src="./js/m_index.js" type="text/javascript" defer></script>
 </head>
 <body>
     <div class="main">
@@ -42,45 +43,84 @@
             </div>
             <div class="sectionItem sectionItem02">
                 <div class="textWrap">
-                    <span class="num fh">01</span>
+                    <span class="num fh">02</span>
                     <div class="line"></div>
                     <h2 class="fh">
-                        Professional<br>
-                        Golfers
+                        Studio<br>
+                        Introduction
                     </h2>
                     <p>
-                        프로 골퍼 소개
+                        골프 스튜디오
                     </p>
                     <button onclick="openGolfer()">
                         <img src="./img/btn-arr.svg" alt="btn-arr">
                     </button>
                 </div>
             </div>
-            <div class="sectionItem sectionItem03" style="background-color: red;">
+            <div class="sectionItem sectionItem03">
                 <div class="textWrap">
-                    <span class="num fh">01</span>
+                    <span class="num fh">03</span>
                     <div class="line"></div>
                     <h2 class="fh">
-                        Professional<br>
-                        Golfers
+                        AHA<br>
+                        Spirit
                     </h2>
                     <p>
-                        프로 골퍼 소개
+                        정령
                     </p>
                     <button onclick="openGolfer()">
                         <img src="./img/btn-arr.svg" alt="btn-arr">
                     </button>
+                </div>
+
+                <div class="bgItemWrap">
+                    <div class="bgItem ch ch01"></div>
+                    <div class="bgItem"></div>
+                    <div class="bgItem ch ch02"></div>
+                    <div class="bgItem"></div>
+                    <div class="bgItem ch ch03"></div>
                 </div>
             </div>
 
         </div>
 
         <!-- 내 예약 정보 -->
-        <div>
-
+        <div class="scheduleWrap">
+            <div class="schedule-top">
+                <div>
+                    <h3>내 예약 정보</h3>
+                    <button class="scheduleTrigger" onclick="scheduleTrigger()"></button>
+                </div>
+                <div class="info-top">
+                    <div class="fh">
+                        <span class="name">Kim min jae</span>
+                        pro
+                    </div>
+                    <div class="fh">
+                        <span class="room ">C</span>
+                        room
+                    </div>
+                </div>
+                <div class="info-bottom">
+                    <div class="start">
+                        <div class="date fh">2023.08.25</div>
+                        <div>예약일자</div>
+                    </div>
+                    <div class="end">
+                        <div class="time fh">AM 09:00</div>
+                        <div>예약시간</div>
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-tray">
+                <img src="./img/mobile/scheduleTray.svg" alt="scheduleTray">
+            </div>
+            <div class="schedule-bottom">
+                <div class="ev-btn colorBtn">예약</div>
+                <div class="ev-btn">변경/취소</div>
+            </div>
         </div>
     </div>
-
     
 
       <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -90,13 +130,8 @@
       <script type="text/javascript">
         $(document).ready(function(){
           $('.slideWrap').slick({
-            //   dots: true,
-            //   infinite: true,
-            //   speed: 180,
-            //   fade: true,
-            //   cssEase: 'ease-in-out',
-            //   slidesToScroll: 1,
-            //   slidesToShow: 1,
+            dots: false,
+            arrows: false,
           });
         });
       </script>
